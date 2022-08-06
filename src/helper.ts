@@ -6,6 +6,7 @@ type IRowData = Array<{
 }>;
 
 const tableBody = document.querySelector('[data-sink="table-body"]');
+const pageViewElement = document.querySelector('[data-pageview="page-view"]');
 const API_URL = "https://randomapi.com/api/8csrgnjw?key=LEIX-GF3O-AG7I-6J84";
 
 function generateApiUrl(page: number) {
@@ -19,6 +20,7 @@ export async function fetchData(page: number) {
     return data;
   } catch (error) {
     alert(error?.message || error?.response?.data?.message);
+    pageViewElement?.replaceChildren("");
   }
 }
 
@@ -57,4 +59,16 @@ export function disableButton(element: Element | null) {
 
 export function enableButton(element: Element | null) {
   element?.removeAttribute("disabled");
+}
+
+export function toggleLoader(page?: number) {
+  pageViewElement?.replaceChildren("");
+  if (!page) {
+    const div = document.createElement("div");
+    div.setAttribute("class", "lds-dual-ring");
+    pageViewElement?.appendChild(div);
+    return;
+  }
+  const pageText = document.createTextNode(`Showing Page ${page}`);
+  pageViewElement?.appendChild(pageText);
 }

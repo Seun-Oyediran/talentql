@@ -3,6 +3,7 @@ import {
   enableButton,
   fetchData,
   isEvenNumber,
+  toggleLoader,
   useUpdateTable,
 } from "./helper";
 
@@ -16,6 +17,7 @@ nextBtn?.addEventListener("click", handleNext);
 prevBtn?.addEventListener("click", handlePrev);
 
 async function handleNext() {
+  toggleLoader();
   currentPage += 1;
 
   if (!isEvenNumber(currentPage)) {
@@ -28,11 +30,13 @@ async function handleNext() {
   }
 
   enableButton(prevBtn);
+  toggleLoader(currentPage);
   useUpdateTable(result.results[0][`${currentPage}`]);
 }
 
 async function handlePrev() {
   // if (currentPage < 2) return;
+  toggleLoader();
   currentPage -= 1;
 
   if (isEvenNumber(currentPage)) {
@@ -45,10 +49,12 @@ async function handlePrev() {
     disableButton(prevBtn);
   }
 
+  toggleLoader(currentPage);
   useUpdateTable(result.results[0][`${currentPage}`]);
 }
 
 const startApp = async () => {
+  toggleLoader();
   disableButton(nextBtn);
   disableButton(prevBtn);
   result = await fetchData(currentPage);
@@ -57,6 +63,7 @@ const startApp = async () => {
     enableButton(nextBtn);
   }
 
+  toggleLoader(currentPage);
   useUpdateTable(result.results[0][`${currentPage}`]);
 };
 
