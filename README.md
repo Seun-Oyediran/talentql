@@ -1,0 +1,2 @@
+# talentql
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d0b4efe3c7a841aeb1b53d1d4df51886)](https://app.codacy.com/gh/Seun-Oyediran/talentql?utm_source=github.com&utm_medium=referral&utm_content=Seun-Oyediran/talentql&utm_campaign=Badge_Grade_Settings)
