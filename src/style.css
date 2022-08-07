@@ -85,6 +85,7 @@ tbody tr:nth-child(even) {
   width: 24px;
   height: 24px;
 }
+
 .lds-dual-ring::after {
   content: " ";
   display: block;

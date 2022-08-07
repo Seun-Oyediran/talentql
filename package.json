@@ -11,7 +11,5 @@
     "parcel": "^2.6.2",
     "process": "^0.11.10"
   },
-  "engines": {
-    "node": "16.13.2"
-  }
+  "type": "module"
 }
