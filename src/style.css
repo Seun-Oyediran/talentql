@@ -49,33 +49,24 @@ tbody tr:nth-child(even) {
 
 .btn-group button {
   background-color: #04aa6d;
-  /* Green background */
   border: 1px solid green;
-  /* Green border */
   color: white;
-  /* White text */
   padding: 10px 24px;
-  /* Some padding */
   cursor: pointer;
-  /* Pointer/hand icon */
   float: left;
-  /* Float the buttons side by side */
   pointer-events: all;
 }
 
 .btn-group button:not(:last-child) {
   border-right: none;
-  /* Prevent double borders */
 }
 
-/* Clear floats (clearfix hack) */
-.btn-group:after {
+.btn-group::after {
   content: "";
   clear: both;
   display: table;
 }
 
-/* Add a background color on hover */
 .btn-group button:hover {
   background-color: #3e8e41;
 }
@@ -89,30 +80,28 @@ tbody tr:nth-child(even) {
   margin: 0.6em 1em;
 }
 
-/* css loader */
 .lds-dual-ring {
   display: inline-block;
   width: 24px;
   height: 24px;
 }
-.lds-dual-ring:after {
+.lds-dual-ring::after {
   content: " ";
   display: block;
   width: 20px;
   height: 20px;
-  /* margin: 8px; */
   border-radius: 50%;
   border: 3px solid #000;
   border-color: #000 transparent #000 transparent;
   animation: lds-dual-ring 0.9s linear infinite;
 }
+
 @keyframes lds-dual-ring {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
 }
-
-/* css loader */

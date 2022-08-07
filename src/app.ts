@@ -4,7 +4,7 @@ import {
   fetchData,
   isEvenNumber,
   toggleLoader,
-  useUpdateTable,
+  updateTable,
 } from "./helper";
 
 let result;
@@ -31,7 +31,7 @@ async function handleNext() {
 
   enableButton(prevBtn);
   toggleLoader(currentPage);
-  useUpdateTable(result.results[0][`${currentPage}`]);
+  updateTable(result.results[0][`${currentPage}`]);
 }
 
 async function handlePrev() {
@@ -50,7 +50,7 @@ async function handlePrev() {
   }
 
   toggleLoader(currentPage);
-  useUpdateTable(result.results[0][`${currentPage}`]);
+  updateTable(result.results[0][`${currentPage}`]);
 }
 
 const startApp = async () => {
@@ -64,7 +64,7 @@ const startApp = async () => {
   }
 
   toggleLoader(currentPage);
-  useUpdateTable(result.results[0][`${currentPage}`]);
+  updateTable(result.results[0][`${currentPage}`]);
 };
 
 document.addEventListener("DOMContentLoaded", startApp);

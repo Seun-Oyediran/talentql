@@ -28,7 +28,7 @@ export function isEvenNumber(number: number) {
   return number % 2 === 0;
 }
 
-export function useUpdateTable(data: IRowData) {
+export function updateTable(data: IRowData) {
   tableBody?.replaceChildren("");
   for (let i = 0; i < data.length; i++) {
     const tr = document.createElement("tr");
